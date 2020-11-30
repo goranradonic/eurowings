@@ -1,0 +1,57 @@
+@import "../../styles/breakpoints";
+
+
+header{
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+
+  .header__container{
+    -moz-box-pack: justify;
+    -moz-box-align: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    justify-content: space-between;
+    max-width: 1760px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+
+    @media only screen and (min-width: $screen-md) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    @media only screen and (min-width: $screen-lg) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+    svg{
+      height: 30px;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+.full {
+  transition: opacity 400ms ease 0ms;
+}
+
+.thumb {
+  filter: blur(20px);
+  transform: scale(1.1);
+  transition: visibility 0ms ease 400ms;
+  visibility: visible;
+}
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

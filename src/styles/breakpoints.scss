@@ -1,0 +1,8 @@
+$screen-xs: 0px;
+$screen-sm: 744px;
+$screen-md: 1128px;
+$screen-lg: 1440px;
+
+$max-screen-xs: $screen-sm - 1px;
+$max-screen-sm: $screen-md - 1px;
+$max-screen-md: $screen-lg - 1px;

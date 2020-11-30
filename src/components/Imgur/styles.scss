@@ -1,0 +1,170 @@
+@import "../../styles/breakpoints";
+
+.imgur-filters {
+  padding-top: 36px;
+  height: 0;
+  display: flex;
+  overflow-y: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  flex-direction: column;
+
+  @media only screen and (min-width: $screen-md) {
+    flex-direction: row;
+  }
+
+  &.active {
+    height: 100%;
+
+    @media only screen and (min-width: $screen-md) {
+      height: 80px;
+    }
+  }
+
+  &__section {
+    width: 100%;
+    margin-bottom: 16px;
+
+    @media only screen and (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
+
+    @media only screen and (min-width: $screen-md) {
+      width: 33%;
+    }
+
+    h4 {
+      margin: 0 0 16px;
+    }
+
+    &--cta {
+      display: flex;
+
+      button {
+        font-size: 12px;
+        box-shadow: 0 0 0 1px #e7e7e9 inset;
+        margin-right: 8px;
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &.active {
+          box-shadow: 0 0 0 1px #1bb76e inset;
+          background-color: rgba(231, 231, 233, 0.31);
+        }
+
+        &.disable {
+          box-shadow: none;
+          cursor: not-allowed;
+          background-color: #e7e7e9;
+          position: relative;
+
+          .tooltip {
+            display: none;
+          }
+
+          &:hover {
+            box-shadow: none;
+
+            .tooltip {
+              position: absolute;
+              background: hsla(0, 0%, 20%, 0.9);
+              width: 100px;
+              padding: 8px;
+              display: flex;
+              top: -60px;
+              color: white;
+              font-weight: 600;
+              border-radius: 6px;
+              font-size: 10px;
+              line-height: 1.5;
+              left: -70%;
+
+              &:after {
+                position: absolute;
+                bottom: -7px;
+                left: 50%;
+                margin-left: -5px;
+                width: 0;
+                border-top: 7px solid #000;
+                border-top: 7px solid hsla(0, 0%, 20%, 0.9);
+                border-right: 7px solid transparent;
+                border-left: 7px solid transparent;
+                content: " ";
+                font-size: 0;
+                line-height: 0;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 0 0 1px #1bb76e inset;
+        }
+
+      }
+    }
+
+    &--group {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.imgur {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+  width: 100%;
+  @media only screen and (min-width: $screen-sm) {
+    width: 50%;
+  }
+  @media only screen and (min-width: $screen-md) {
+    width: 25%;
+  }
+  @media only screen and (min-width: $screen-lg) {
+    width: 20%;
+  }
+
+  &__wrap {
+    padding: 8px;
+
+    .imgur__image {
+      height: 300px;
+      display: block;
+      position: relative;
+      cursor: pointer;
+
+      &--wrap {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        &__overlay {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          background: linear-gradient(180deg, transparent 52%, rgba(0, 0, 0, 0.8) 100%);
+
+
+          span {
+            position: absolute;
+            bottom: 16px;
+            color: white;
+            font-weight: 600;
+            padding: 0 16px;
+          }
+
+        }
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
